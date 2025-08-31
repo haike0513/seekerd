@@ -17,7 +17,7 @@ func main() {
 	// gin.SetMode(gin.ReleaseMode)
 	route := gin.Default()
 	seeker.Hello()
-	dsn := "host=localhost user=postgres password=postgresdb dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai"
+	dsn := "host=localhost user=postgres password=postgresdb dbname=seekerd port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	models.InitDB(db)
 	if err != nil {
