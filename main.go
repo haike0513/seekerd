@@ -26,6 +26,7 @@ func main() {
 	fmt.Println("db connected:", db != nil)
 	// route.Use(cors.Default())
 	// route.Use(gin.Logger())
-	route.GET("/user", handler.GetUser)
+	v1 := route.Group("/api/v1")
+	v1.GET("/user", handler.GetUser)
 	route.Run(":8080")
 }
